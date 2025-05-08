@@ -1,27 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: postgis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: postgis
   template:
     metadata:
       labels:
-        app: backend
+        app: postgis
     spec:
       containers:
-        - name: backend
-          image: your-dockerhub-username/backend:latest
+        - name: postgis
+          image: postgis/postgis:14-3.3
           ports:
-            - containerPort: 8000
+            - containerPort: 5432
           env:
-            - name: KAFKA_HOST
-              value: kafka:9092
-            - name: POSTGRES_HOST
-              value: postgis
             - name: POSTGRES_DB
               value: geodb
             - name: POSTGRES_USER
