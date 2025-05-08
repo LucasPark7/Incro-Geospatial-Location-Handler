@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from kafka_producer import get_producer
 from db import save_location
-import json
 
 app = FastAPI()
 producer = get_producer()

@@ -12,4 +12,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt --no-cache-dir
 # application code
 COPY app/ .
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
