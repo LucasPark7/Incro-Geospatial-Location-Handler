@@ -15,10 +15,15 @@ kubectl delete secret --all -n $namespace
 # Make sure these files exist in the current directory or update the paths
 Write-Host "Reapplying manifests..."
 kubectl apply -f .\k8s\kafka\zookeeper-deployment.yaml
+kubectl apply -f .\k8s\kafka\zookeeper-service.yaml
 kubectl apply -f .\k8s\kafka\kafka-deployment.yaml
+kubectl apply -f .\k8s\kafka\kafka-service.yaml
 kubectl apply -f .\k8s\postgis\postgis-deployment.yaml
+kubectl apply -f .\k8s\postgis\postgis-service.yaml
 kubectl apply -f .\k8s\backend-deployment.yaml
+kubectl apply -f .\k8s\backend-service.yaml
 kubectl apply -f .\k8s\frontend-deployment.yaml
+kubectl apply -f .\k8s\frontend-service.yaml
 
 # Wait for all pods to be ready
 Write-Host "Waiting for all pods to become ready..."
