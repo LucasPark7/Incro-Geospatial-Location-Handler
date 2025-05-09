@@ -9,7 +9,7 @@ const defaultIcon = new L.Icon({
 });
 
 export default function MapView({ devices }) {
-  const center = [40.7128, -74.0060]; // Default: New York City
+  const center = [49.2827, 123.1207]; // Default: Vancouver
 
   return (
     <MapContainer center={center} zoom={12} style={{ height: "100vh", width: "100%" }}>
