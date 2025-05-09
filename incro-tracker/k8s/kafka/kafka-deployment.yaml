@@ -14,11 +14,23 @@ spec:
     spec:
       containers:
         - name: kafka
-          image: bitnami/kafka:latest
+          image: bitnami/kafka:3.4.0
           env:
             - name: KAFKA_CFG_ZOOKEEPER_CONNECT
               value: zookeeper:2181
             - name: ALLOW_PLAINTEXT_LISTENER
               value: "yes"
+            - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
+              value: "PLAINTEXT:PLAINTEXT"
+            - name: KAFKA_LISTENER_SECURITY_PROTOCOL
+              value: PLAINTEXT
+            - name: KAFKA_LISTENERS
+              value: "PLAINTEXT://0.0.0.0:9092"
+            - name: KAFKA_ADVERTISED_LISTENERS
+              value: "PLAINTEXT://kafka:9092"
+            - name: KAFKA_LISTENER_NAME_PLAINTEXT_LISTENER_PORT
+              value: "9092"
+            - name: KAFKA_LISTENER_NAME_PLAINTEXT_LISTENER_HOST
+              value: "0.0.0.0"
           ports:
             - containerPort: 9092

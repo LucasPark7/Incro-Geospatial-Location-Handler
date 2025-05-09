@@ -1,11 +1,12 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from kafka_producer import get_producer
 from db import save_location
+from pydantic import BaseModel
 
 app = FastAPI()
 producer = get_producer()
 
-@app.post("/location")
+@app.post("/api/location")
 async def receive_location(payload: dict):
     required = {"device_id", "lat", "lon", "timestamp"}
     if not required.issubset(payload):
