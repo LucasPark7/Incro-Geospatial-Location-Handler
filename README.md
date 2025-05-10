@@ -4,6 +4,8 @@ using Kubernetes, FastAPI, Kafka, PostGIS, and a React+Leaflet frontend
 
 ## How to run:
 
+make sure minikube is running:\
+minikube start\
 cd .\incro-tracker\
 run reboot-incro.ps1\
 powershell script to restart all kubernetes pods and deployments\
