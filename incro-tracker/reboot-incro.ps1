@@ -21,8 +21,6 @@ kubectl apply -f .\k8s\backend-service.yaml
 kubectl apply -f .\k8s\frontend-deployment.yaml
 kubectl apply -f .\k8s\frontend-service.yaml
 
-kubectl rollout restart deployment
-
 # Wait for all pods to be ready
 Write-Host "Waiting for all pods to become ready..."
 kubectl wait --for=condition=Ready pods --all -n $namespace --timeout=120s

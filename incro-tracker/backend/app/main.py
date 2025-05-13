@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from db import save_location
+from .db import save_location
 
 app = FastAPI()
 

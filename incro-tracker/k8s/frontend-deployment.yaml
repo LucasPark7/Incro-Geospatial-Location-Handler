@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: lucaspark7/frontend:latest
+          image: incro-tracker-frontend:latest
           ports:
             - containerPort: 80

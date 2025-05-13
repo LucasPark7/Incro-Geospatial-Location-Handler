@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: lucaspark7/backend:latest
+          image: incro-tracker-backend:latest
           ports:
             - containerPort: 8000
           env:
